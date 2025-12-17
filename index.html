@@ -1,44 +1,49 @@
-
 <head>
-   <title>IHRoutingMap</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=yes" />
-    <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css">
-    <!--
+  <title>IHRoutingMap</title>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=yes" />
+  <link rel="stylesheet" href="https://js.arcgis.com/4.23/esri/themes/light/main.css">
+  <!--
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.39/moment-timezone-with-data.min.js"></script>
 	-->
-	<script src="https://js.arcgis.com/4.23/"></script>
-    <script>
-      require(["esri/config","esri/Map", "esri/views/MapView","esri/layers/TileLayer" ], function (esriConfig,Map, MapView, TileLayer) {
+  <script src="https://js.arcgis.com/4.23/"></script>
+  <script>
+    require(["esri/config", "esri/Map", "esri/views/MapView", "esri/layers/TileLayer"], function (esriConfig, Map, MapView, TileLayer) {
 
-      });
-      
+    });
 
-    </script>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
 
-	<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+  </script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
 
-    <link rel="stylesheet" type="text/css" href="style.css" />
-   
+  <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+
 </head>
+
 <body>
   <div id="appContainer">
     <!-- Left Info Panel -->
     <div id="leftPanel">
-    <div class="title-container">
-      <h3 id="title">Interior Health’s Climate-Hazard Mapping Dashboard</h3>
-      <h5 id="subtitle">Assessing Impacts to Delivery Routes in Pharmacy Services</h5>
-    </div>
+      <div class="title-container">
+        <h3 id="title">Interior Health’s Climate-Hazard Mapping Dashboard</h3>
+        <h5 id="subtitle">Assessing Impacts to Delivery Routes in Pharmacy Services</h5>
+      </div>
 
 
       <div id="instructions">
-        <p style="font-size: 0.97em;">This dashboard allows you to view and explore criticality of pharmacy medication delivery routes in Interior Health. This analysis uses route mapping between three major source facilities (Kelowna General, Kelowna Warehouse, and Royal Inlands) and destination healthcare facilities throughout the health authority. 
-</p>
-        <p style="font-size: 0.95em;">To view routes, select an origin and destination option from the Origin and Destination Facility drop-downs below. 
-</p>
-   
+        <p style="font-size: 0.97em;">This dashboard allows you to view and explore criticality of pharmacy medication
+          delivery routes in Interior Health. This analysis uses route mapping between three major source facilities
+          (Kelowna General, Kelowna Warehouse, and Royal Inlands) and destination healthcare facilities throughout the
+          health authority.
+        </p>
+        <p style="font-size: 0.95em;">To view routes, select an origin and destination option from the Origin and
+          Destination Facility drop-downs below.
+        </p>
+
         <p style="font-size: 0.95em; color: #555;">
           Then filter route options to view up to 2 alternate journeys between the selected health care facilities.
           In addition, scroll down to visualise historic natural disaster data
@@ -73,18 +78,18 @@
 
 
           <div class="checkbox-container">
-            
-                    <!-- Route Summary Display -->
-          <div id="routeSummaryContainer" style="margin-top: 15px;">
-            <label><strong>Route Lengths (km):</strong></label>
-            <div id="routeSummaryList"></div>
-          </div>
+
+            <!-- Route Summary Display -->
+            <div id="routeSummaryContainer" style="margin-top: 15px;">
+              <label><strong>Route Lengths (km):</strong></label>
+              <div id="routeSummaryList"></div>
+            </div>
 
           </div>
 
         </div>
       </div>
-      
+
       <!-- Hazard Dropdown for Closure Rollups -->
       <div id="hazardOptionsContainer">
         <label for="hazardSelector"><strong>Visualise Natural Disaster Related Road Closure Events:</strong></label>
@@ -112,7 +117,7 @@
       <div id="hazardDescription" style="display: none;">
         <p id="hazardDescriptionText"></p>
       </div>
-      
+
     </div>
 
     <!-- Right Map Panel -->
@@ -126,17 +131,16 @@
   <script src="script.js"></script>
   <script>
     const hazardDescriptions = {
-    flood: "Modelled Flood Hazard (200 year return period) representing inundation along the river network. Sourced: Copernicus Emergency Managment Service. Zoom into valley bottoms and riparian areas to better visualise this layer.",
-    landslide: "Historic landslide polygons compiled from the Preliminary Canadian Landslide Database indicate past terrain failures. While the data attributes landslide locations as data points, this layer is displayed as a measure of density of landslide locations. The colors get smoother or more detailed when you zoom in or out",
-    wildfire: "Historical wildfire burn areas recorded between 2015–2023, showing extent of past fire impact zones.",
-    Grand_Total: "All Road Closures: This layer displays all reported road closures from 2006 to 2024, providing a cumulative view of transportation disruptions.",
-    Fire_Rollup: "Road closures related to fire-related events, focuses on routes impacted during peak fire seasons.",
-    Flooding_Rollup: "Flooding roadclosure data tracks road closures specifically due to flood events, which can help assess seasonal route vulnerability.",
-    Landslide_Rollup: "Landslide closures reflect areas where road access has been blocked due to terrain instability or slope failures.",
-    Smoke_Rollup: "Smoke closures show regions where roadways were closed due to hazardous air quality or low visibility from wildfire smoke. As you can see, these types of closures are less frequent",
-    Snow_Avalanche_Cold_Rollup: "This layer identifies closures caused by snow, avalanches, or extreme cold, particularly affecting mountain passes and high-elevation routes."
-  };
+      flood: "Modelled Flood Hazard (200 year return period) representing inundation along the river network. Sourced: Copernicus Emergency Managment Service. Zoom into valley bottoms and riparian areas to better visualise this layer.",
+      landslide: "Historic landslide polygons compiled from the Preliminary Canadian Landslide Database indicate past terrain failures. While the data attributes landslide locations as data points, this layer is displayed as a measure of density of landslide locations. The colors get smoother or more detailed when you zoom in or out",
+      wildfire: "Historical wildfire burn areas recorded between 2015–2023, showing extent of past fire impact zones.",
+      Grand_Total: "All Road Closures: This layer displays all reported road closures from 2006 to 2024, providing a cumulative view of transportation disruptions.",
+      Fire_Rollup: "Road closures related to fire-related events, focuses on routes impacted during peak fire seasons.",
+      Flooding_Rollup: "Flooding roadclosure data tracks road closures specifically due to flood events, which can help assess seasonal route vulnerability.",
+      Landslide_Rollup: "Landslide closures reflect areas where road access has been blocked due to terrain instability or slope failures.",
+      Smoke_Rollup: "Smoke closures show regions where roadways were closed due to hazardous air quality or low visibility from wildfire smoke. As you can see, these types of closures are less frequent",
+      Snow_Avalanche_Cold_Rollup: "This layer identifies closures caused by snow, avalanches, or extreme cold, particularly affecting mountain passes and high-elevation routes."
+    };
 
   </script>
 </body>
-
