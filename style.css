@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -40,7 +41,7 @@ html, body {
 .title-container {
   background-color: #164d81;
   /* only 8px on the bottom instead of 14px everywhere */
-  padding: 14px 14px 8px 14px;  
+  padding: 14px 14px 8px 14px;
   border-radius: 12px;
   text-align: left;
   margin-bottom: 8px;
@@ -55,7 +56,6 @@ html, body {
   /* 8px only above, no bottom margin */
   margin: 8px 0 0 0;
 }
-
 
 #title {
   margin: 0;
@@ -88,7 +88,7 @@ html, body {
   background: white;
   padding: 10px 12px;
   border-radius: 8px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
   margin-top: 7px;
   color: #113455;
 }
@@ -223,7 +223,7 @@ html, body {
   color: #113455;
   max-width: 300px;
   max-height: 300px; /* control vertical size */
-  overflow-y: auto;  /* scroll when long */
+  overflow-y: auto; /* scroll when long */
 }
 
 #hazardDescription {
@@ -235,25 +235,25 @@ html, body {
   max-height: 250px; /* fixed height */
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   padding: 15px;
   color: #113455;
   font-size: 14px;
   z-index: 1000;
-  overflow-y: auto;  /* scroll if too long */
+  overflow-y: auto; /* scroll if too long */
 }
 
 /* indent both road‐criticality checkboxes */
 #secondaryBarrierContainer,
 #tertiaryBarrierContainer {
-  margin-left: 16px;      /* indent from the left */
+  margin-left: 16px; /* indent from the left */
 }
 
 /* separator line above the first one */
 #secondaryBarrierContainer {
-  padding-top: 8px;       /* give room for the line */
+  padding-top: 8px; /* give room for the line */
   border-top: 1px solid #ccc;
-  margin-top: 12px;       /* space from the route checkboxes */
+  margin-top: 12px; /* space from the route checkboxes */
 }
 /* remove all spacing around each layer */
 .esri-legend .esri-legend__layer {
@@ -271,7 +271,7 @@ html, body {
 /* tighten each symbol/text row */
 .esri-legend__layer-row {
   margin: 0 !important;
-  padding: 1px 0 !important;    /* you can go down to 1px if you like */
+  padding: 1px 0 !important; /* you can go down to 1px if you like */
   line-height: 1.5 !important;
 }
 
