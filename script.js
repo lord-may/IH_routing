@@ -72,7 +72,7 @@ require([
 ) {
   //API key and portal URL
   esriConfig.apiKey =
-    "AAPTaf1WvIStZhT3uZOUwcRpcjQ..DkuiPIwativaKF7eAWZ0uzPje81AaoqKEvkbvDVkkhWVNQWg5YsRCyAt9fCvGXlCYmH0Vr2-Z6BVXgzr-Q3nJIshOSmWqByLstKOs-Lhzt1uFtkWCJTt1dIBnxHcM6Q1ObfQQTqTFuRVPcm70cBGch2PTChQ8P4UF0it5j6ST33LjswfOInJ1mYvCsHmcBCMvk1fOjc19Y3u3kc3nIkFweC5-YCpsdQCdSAF_tXy2BtoNqdbgcBxYPpNd9ONAT1_wQWC9Eha";
+    "AAPTaqY-vSUyePGEUyr8CZ8aXSA..ggZXaQMPZKBi44GzE-5X0xCZqvYsE0FIhQG9VaasZn39uN40f_CLUhXxMHkZNCLabiMNltFc-uKEi1VTp4iDkizZCWSjnksA6H-oHPVHtiL8k_M560Tu2Ire18-iCMv7E_F2gKN3UitgUPBJWAijCZ2YBb0Tg1JHxqGZpqf0XXmex0w94M1sxfTSFV6VMygrVVPNqf9eV9Y0ghK6LIn0kXbnnrdWOwsyplSZ_2-frPblhbKuOjsLsnYFXFg6AT1_wQWC9Eha";
   esriConfig.portalUrl = "https://lickergeo.maps.arcgis.com";
 
   //basemap
